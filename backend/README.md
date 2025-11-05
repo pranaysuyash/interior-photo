@@ -226,10 +226,6 @@ docker-compose -f docker-compose.prod.yml up -d
 
 See `IMPLEMENTATION_GUIDE_PART3.md` Section 20 for common issues and solutions.
 
-## 📄 License
-
-MIT
-
 ## 🙏 Acknowledgments
 
 - FastAPI framework

@@ -22,7 +22,7 @@ from app.db.session import Base, get_db
 from app.core.config import settings
 from app.models.user import User, SubscriptionTier
 from app.models.transformation import Transformation, TransformationStatus
-from app.utils.security import hash_password
+from app.core.security import get_password_hash
 
 # Test database configuration
 TEST_DATABASE_URL = "sqlite:///:memory:"
@@ -68,7 +68,7 @@ def test_user(db: Session) -> User:
     """Create a test user"""
     user = User(
         email="test@example.com",
-        password_hash=hash_password("testpassword123"),
+        password_hash=get_password_hash("testpassword123"),
         name="Test User",
         credits=10,
         subscription_tier=SubscriptionTier.FREE,
@@ -85,7 +85,7 @@ def test_pro_user(db: Session) -> User:
     """Create a test pro user"""
     user = User(
         email="pro@example.com",
-        password_hash=hash_password("propassword123"),
+        password_hash=get_password_hash("propassword123"),
         name="Pro User",
         credits=100,
         subscription_tier=SubscriptionTier.PRO,

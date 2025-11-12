@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.db.session import SessionLocal
 from app.models.user import User, SubscriptionTier
-from app.utils.security import hash_password
+from app.core.security import get_password_hash
 import uuid
 
 
@@ -33,7 +33,7 @@ def seed_admin_user(db):
 
     admin = User(
         email=admin_email,
-        password_hash=hash_password(admin_password),
+        password_hash=get_password_hash(admin_password),
         name="Admin User",
         credits=9999,
         subscription_tier=SubscriptionTier.ENTERPRISE,
@@ -82,7 +82,7 @@ def seed_sample_users(db):
 
         user = User(
             email=user_data["email"],
-            password_hash=hash_password(user_data["password"]),
+            password_hash=get_password_hash(user_data["password"]),
             name=user_data["name"],
             credits=user_data["credits"],
             subscription_tier=user_data["tier"],

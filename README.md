@@ -92,19 +92,6 @@ src/
 7. **Compare**: Use the interactive slider to compare before and after
 8. **Download**: Save your transformed image
 
-## 🔮 Future Enhancements
-
-- Backend API integration for actual AI image transformation
-- Multiple transformation options per upload
-- Save and share designs
-- User accounts and design history
-- 3D room visualization
-- AR preview mode
-
-## 📝 License
-
-MIT
-
 ## 🙏 Acknowledgments
 
 - Design inspiration from modern interior design platforms
